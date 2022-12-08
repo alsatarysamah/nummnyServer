@@ -1,5 +1,4 @@
 # nummnyServer
-# auth-api
 [gitHub](https://github.com/alsatarysamah/nummnyServer)
 
 [Railway](https://mstart.up.railway.app/)
