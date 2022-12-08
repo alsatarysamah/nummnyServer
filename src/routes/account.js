@@ -15,9 +15,11 @@ accountRouter.get("/account/:name",  getOneRecored);
 
 ////////////////creat=insert////////////////////
 async function creatRecord(req, res) {
+  try{
   let newaccount = req.body;
   let newRecored = await accountsCollection.create(newaccount);
   res.status(201).json(newRecored);
+  }catch(e){res.status(500).send(e.message)}
 }
 ///////////select *//////////////////
 async function getAll(req, res) {

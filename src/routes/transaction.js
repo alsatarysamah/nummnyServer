@@ -16,7 +16,10 @@ transactionRouter.get("/transaction/:name",  getOneRecored);
 ////////////////creat=insert////////////////////
 async function creatRecord(req, res) {
   let newtransaction = req.body;
+
   let newRecored = await transactionCollection.create(newtransaction);
+  console.log(newRecored
+    );
   res.status(201).json(newRecored);
 }
 ///////////select *//////////////////

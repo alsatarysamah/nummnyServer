@@ -15,6 +15,13 @@ const app = express();
 app.get("/", (req, res) => {
   res.send("Home");
 });
+
+app.use(cors());
+app.use(morgan("dev"));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(userRoute);
 app.use(accountRouter);
 app.use(transactionRouter);
