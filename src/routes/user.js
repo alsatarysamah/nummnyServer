@@ -15,9 +15,14 @@ userRouter.get("/user/:name",  getOneRecored);
 
 ////////////////creat=insert////////////////////
 async function creatRecord(req, res) {
+ 
   let newuser = req.body;
   let newRecored = await userCollection.create(newuser);
+  if (!newRecored)
+  res.status(500).send("Error while creating new User");
+else
   res.status(201).json(newRecored);
+  
 }
 ///////////select *//////////////////
 async function getAll(req, res) {
@@ -38,8 +43,10 @@ async function updating(req, res) {
 /////////////delete///////////////
 async function deleting(req, res) {
   let id = parseInt(req.params.id);
+  let deletedUser=await userCollection.read(id);
+  console.log(deletedUser.dataValues);
   let deleted = await userCollection.delete(id);
-  res.status(204).json(deleted);
+  res.status(200).json(deletedUser);
 }
 
 /////////////get one/////////////

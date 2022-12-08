@@ -5,16 +5,12 @@ class collection{
   ////////////creat=insert///////////////////////////
   
   async create(obj) {
-      try {
+     
           
   
           let newRecord = await this.model.create(obj);
           return newRecord;
-      } catch (e) {
-          console.log(e);
-          console.error("error in creating a new record in model ", this.model)
-  
-      }
+      
   }
   /////////////read//////////////////////////
   async read(id){

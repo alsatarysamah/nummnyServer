@@ -10,6 +10,10 @@ const users = (sequelize, DataTypes) =>
       status: { type: DataTypes.STRING },
       gender: { type: DataTypes.ENUM("male", "female") },
       date_Of_Birth: { type: DataTypes.DATE },
+      img: { 
+        type: DataTypes.TEXT('long'),
+      },
+      
     },
     { timestamps: false }
   );
