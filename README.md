@@ -15,15 +15,15 @@ a REST API and Web Application using React and SQL Server Database.
 
 
 
-## user V1 routes
+## user
 
-1-POST /users adds an item to the DB and returns an object with the added item
+1-POST /user adds an item to the DB and returns an object with the added item
 
-2-GET /users returns a list of users
+2-GET /user returns a list of users
 
-3-GET /users/:ID returns a single user by ID
+3-GET /user/:ID returns a single user by ID
 
-4-PUT /users/:ID returns a single, updated user by ID
+4-PUT /user/:ID returns a single, updated user by ID
 
 5-DELETE /user/:ID delete user by ID  returns an empty object. 
 
