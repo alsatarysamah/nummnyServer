@@ -2,9 +2,9 @@
 # COVID-19
 
 
-[gitHub]()
+[gitHub](https://github.com/alsatarysamah/nummnyServer)
 
-[Railway]()
+[Live](https://covid-19-asac.up.railway.app/)
 
 a REST API using SQL Server Database.
 
