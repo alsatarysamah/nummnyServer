@@ -5,10 +5,9 @@ const morgan = require("morgan");
 
 const errorHandler = require("./error-handlers/500.js");
 const notFound = require("./error-handlers/404.js");
-
 const userRoute=require("./routes/user")
-const accountRouter=require("./routes/account")
-const transactionRouter=require("./routes/transaction")
+const recordRouter = require("../src/routes/record");
+const authRoutes = require("./routes/index.js");
 
 
 const app = express();
@@ -23,9 +22,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(userRoute);
-app.use(accountRouter);
-app.use(transactionRouter);
 
+app.use(recordRouter)
+app.use(authRoutes)
 
 
 // Catchalls

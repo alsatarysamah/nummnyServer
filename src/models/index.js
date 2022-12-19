@@ -3,8 +3,8 @@
 require('dotenv').config();
 const { Sequelize, DataTypes } = require('sequelize');
 const users = require('./user.js');
-const accounts = require('./account.js');
-const transaction = require('./transaction.js');
+
+const recordModel=require("./record")
 
 
 
@@ -28,29 +28,20 @@ const userTable = users(sequelize, DataTypes);
 const userCollection=new DataCollection(userTable);
 
 
-const accountsTable = accounts(sequelize, DataTypes);
-const accountsCollection=new DataCollection(accountsTable);
-
-const transactionTable = transaction(sequelize, DataTypes);
-const transactionCollection=new DataCollection(transactionTable);
-
+const recordsTable = recordModel(sequelize, DataTypes);
+const recordCollection=new DataCollection(recordsTable);
 //relations//////////////////////////////////////
 
-userTable.hasMany(accountsTable); // user many account
-accountsTable.belongsTo(userTable); // account one user
 
-accountsTable.hasMany(transactionTable);
-transactionTable.belongsTo(accountsTable);
 
-userTable.hasMany(transactionTable); // user many transaction
-transactionTable.belongsTo(userTable); // account one user
+userTable.hasMany(recordsTable); // user many records
+recordsTable.belongsTo(userTable); // record one user
 
 
 module.exports = {
     db: sequelize,
     users: users(sequelize, DataTypes),
     userCollection:userCollection,
-    accountsCollection:accountsCollection,
-    transactionCollection:transactionCollection
-  
+    recordCollection:recordCollection,
+    recordsTable:recordsTable
   };
