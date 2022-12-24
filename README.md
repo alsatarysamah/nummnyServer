@@ -2,7 +2,7 @@
 # auth-api
 [gitHub](https://github.com/alsatarysamah/nummnyServer)
 
-[Railway](https://mstart.up.railway.app/)
+[Live](https://mstart.cleverapps.io/)
 
 a REST API and Web Application using React and SQL Server Database.
 
