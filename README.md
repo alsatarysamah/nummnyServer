@@ -4,7 +4,7 @@
 
 [gitHub](https://github.com/alsatarysamah/nummnyServer)
 
-[Live](https://covid-19-asac.up.railway.app/)
+[Live](https://asac.onrender.com/)
 
 a REST API using SQL Server Database.
 
