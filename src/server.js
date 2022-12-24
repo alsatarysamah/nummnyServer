@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.send("Home");
 });
 
-app.use(cors());
+app.use(cors("*"));
 app.use(morgan("dev"));
 
 app.use(express.json());
